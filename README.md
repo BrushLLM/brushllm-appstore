@@ -1,60 +1,74 @@
-# BrushLLM 1Panel 应用商店
+# BrushLLM 1Panel App Store
 
-BrushLLM（企业级 AI 网关）的 [1Panel v2](https://1panel.pro) 第三方应用源。基于 Docker Compose 应用包格式（data.yml 体系），通过"本地应用"机制接入 1Panel 社区版应用商店。
+Third-party app source for [1Panel v2](https://1panel.pro) providing
+[BrushLLM](https://brushllm.com), the enterprise AI gateway. Ships the
+official Docker Compose app package (data.yml format) via the "local apps"
+mechanism of the 1Panel community edition.
 
-## 安装（三步）
+## Install (3 steps)
 
-**1. 在安装了 1Panel 的服务器上执行一键导入：**
+**1. Run the one-line importer on your 1Panel server:**
 
 ```bash
 bash <(curl -sL https://github.com/BrushLLM/brushllm-appstore/raw/main/install.sh)
 ```
 
-> 1Panel 安装在非 `/opt` 目录时：`PANEL_BASE_DIR=/your/path bash <(curl -sL ...)`
+> If 1Panel is installed outside `/opt`:
+> `PANEL_BASE_DIR=/your/path bash <(curl -sL ...)`
 
-**2. 打开 1Panel → 应用商店 → 点击右上角【同步本地应用】**
+**2. Open 1Panel → App Store → click "Sync Local Apps"**
 
-**3. 在应用列表找到 BrushLLM（Local 标签）→ 安装**
+**3. Find BrushLLM (Local tag) in the list → Install**
 
-安装表单默认值开箱即用（内置 SQLite、单容器）；可选配置外部数据库 / Redis：
+Defaults work out of the box (built-in SQLite, single container). Optional
+external database / Redis:
 
-| 参数 | 默认 | 说明 |
+| Parameter | Default | Notes |
 |---|---|---|
-| Web 端口 | 3000 | 面板自动检测端口冲突 |
-| 时区 | Asia/Shanghai | |
-| 会话密钥 | 自动生成 | 多节点部署时各节点须一致 |
-| 外部数据库连接串 | 空 | 留空使用内置 SQLite；支持 MySQL / PostgreSQL DSN |
-| Redis 连接串 | 空 | 多节点部署建议启用 |
+| Web port | 3000 | Port conflicts auto-detected |
+| Timezone | Asia/Shanghai | |
+| Session secret | auto-generated | Must match across nodes |
+| External DB DSN | empty | Empty = built-in SQLite; MySQL / PostgreSQL DSN supported |
+| Redis connection | empty | Recommended for multi-node |
 
-## 升级
+## Upgrade
 
-1. 等应用源发布新版本（本仓库 `apps/brushllm/` 下出现新版本目录）
-2. 重新执行一键导入脚本
-3. 面板【同步本地应用】→ 已安装应用出现【可升级】→ 点击升级
+1. Wait for a new version directory under `apps/brushllm/` in this repo
+2. Re-run the importer script
+3. "Sync Local Apps" → the installed app shows "Upgradable" → upgrade
 
-升级过程自动保留 `data/`（SQLite 数据库）与 `logs/` 目录，可在应用商店设置中开启升级前自动备份。
+Upgrades preserve `data/` (SQLite database) and `logs/` automatically;
+pre-upgrade backups can be enabled in App Store settings.
 
-安装 `latest` 版本的用户也可在应用详情页点【重建】直接拉取最新镜像。
+Users on the `latest` version can pull the newest image via "Rebuild" on the
+app detail page.
 
-## 目录结构
+## Repository layout
 
 ```
 apps/brushllm/
-├── data.yml              # 应用元数据
+├── data.yml              # app metadata
 ├── logo.png
 ├── README.md / README_en.md
-├── 1.0.0-rc.47/          # 固定版本（镜像 pin v1.0.0-rc.47）
-│   ├── data.yml          # 安装表单
+├── 1.0.0-rc.47/          # pinned version (image tag v1.0.0-rc.47)
+│   ├── data.yml          # install form
 │   ├── docker-compose.yml
-│   ├── data/             # SQLite 持久化目录
+│   ├── data/             # SQLite persistence
 │   └── logs/
-└── latest/               # 浮动 tag 版本
+└── latest/               # floating tag
 ```
 
-## 版本与上游
+## Versioning
 
-BrushLLM 基于 [QuantumNous/new-api](https://github.com/QuantumNous/new-api)（AGPLv3）定制，版本号与上游发布保持一致（当前 `v1.0.0-rc.47`），便于跟踪上游升级。镜像发布于 `ghcr.io/brushllm/brushllm-console`，对应源码见 [BrushLLM 源码仓库](https://github.com/BrushLLM/brushllm-console)。
+BrushLLM is a customized fork of
+[QuantumNous/new-api](https://github.com/QuantumNous/new-api) (AGPLv3).
+Version numbers track upstream releases (currently `v1.0.0-rc.47`) to ease
+future upgrades. Images are published at
+`ghcr.io/brushllm/brushllm-console`; corresponding source lives in the
+[brushllm-console repository](https://github.com/BrushLLM/brushllm-console).
 
-## 许可与署名
+## License & attribution
 
-本应用包含 AGPLv3 许可的上游代码。前端设计与开发由 New API 贡献者完成，原项目地址：https://github.com/QuantumNous/new-api
+This app embeds AGPLv3-licensed upstream code. Frontend design and
+development by the New API contributors — original project:
+https://github.com/QuantumNous/new-api
