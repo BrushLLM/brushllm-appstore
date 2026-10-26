@@ -4,7 +4,7 @@
 # 可选环境变量：PANEL_BASE_DIR（1Panel 安装基础目录，默认 /opt）
 set -euo pipefail
 
-REPO_URL="https://github.com/<owner>/brushllm-appstore.git"
+REPO_URL="https://github.com/BrushLLM/brushllm-appstore.git"
 PANEL_BASE_DIR="${PANEL_BASE_DIR:-/opt}"
 
 # --- 前置检查 ---

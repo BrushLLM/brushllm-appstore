@@ -7,7 +7,7 @@ BrushLLM（企业级 AI 网关）的 [1Panel v2](https://1panel.pro) 第三方�
 **1. 在安装了 1Panel 的服务器上执行一键导入：**
 
 ```bash
-bash <(curl -sL https://github.com/<owner>/brushllm-appstore/raw/main/install.sh)
+bash <(curl -sL https://github.com/BrushLLM/brushllm-appstore/raw/main/install.sh)
 ```
 
 > 1Panel 安装在非 `/opt` 目录时：`PANEL_BASE_DIR=/your/path bash <(curl -sL ...)`
@@ -53,7 +53,7 @@ apps/brushllm/
 
 ## 版本与上游
 
-BrushLLM 基于 [QuantumNous/new-api](https://github.com/QuantumNous/new-api)（AGPLv3）定制，版本号与上游发布保持一致（当前 `v1.0.0-rc.47`），便于跟踪上游升级。镜像发布于 `ghcr.io/<owner>/brushllm`，对应源码见 [BrushLLM 源码仓库](https://github.com/<owner>/brushllm)。
+BrushLLM 基于 [QuantumNous/new-api](https://github.com/QuantumNous/new-api)（AGPLv3）定制，版本号与上游发布保持一致（当前 `v1.0.0-rc.47`），便于跟踪上游升级。镜像发布于 `ghcr.io/brushllm/brushllm-console`，对应源码见 [BrushLLM 源码仓库](https://github.com/BrushLLM/brushllm-console)。
 
 ## 许可与署名
 

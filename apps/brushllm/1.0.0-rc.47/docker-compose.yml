@@ -1,6 +1,6 @@
 services:
   brushllm:
-    image: ghcr.io/<owner>/brushllm:v1.0.0-rc.47
+    image: ghcr.io/brushllm/brushllm-console:v1.0.0-rc.47
     container_name: ${CONTAINER_NAME}
     restart: always
     command: --log-dir /app/logs

@@ -26,7 +26,7 @@ additionalProperties:
   limit: 0
   recommend: 9999
   website: https://brushllm.com
-  github: https://github.com/<owner>/brushllm
+  github: https://github.com/BrushLLM/brushllm-console
   document: https://brushllm.com/docs
   memoryRequired: 512
   architectures:
