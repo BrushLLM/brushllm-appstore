@@ -1,0 +1,193 @@
+additionalProperties:
+  formFields:
+    - child:
+        default: ""
+        envKey: PANEL_DB_HOST
+        labelEn: Database Service
+        labelZh: 数据库服务
+        label:
+          en: Database Service
+          es-es: Servicio de base de datos
+          zh: 数据库服务
+          zh-Hant: 資料庫服務
+          ja: データベースサービス
+          ko: 데이터베이스 서비스
+          ms: Perkhidmatan Pangkalan Data
+          pt-br: Serviço de Banco de Dados
+          ru: Служба базы данных
+          tr: Veritabanı Hizmeti
+        required: true
+        type: service
+      default: postgresql
+      envKey: PANEL_DB_TYPE
+      labelEn: Database
+      labelZh: 数据库服务
+      label:
+        en: Database
+        es-es: Base de datos
+        zh: 数据库服务
+        zh-Hant: 資料庫服務
+        ja: データベース
+        ko: 데이터베이스
+        ms: Pangkalan Data
+        pt-br: Banco de dados
+        ru: База данных
+        tr: Veritabanı
+      required: true
+      type: apps
+      values:
+        - label: PostgreSQL
+          value: postgresql
+    - default: brushllm
+      edit: true
+      envKey: PANEL_DB_NAME
+      labelEn: Database Name
+      labelZh: 数据库名
+      label:
+        en: Database Name
+        es-es: Nombre de la base de datos
+        zh: 数据库名
+        zh-Hant: 資料庫名稱
+        ja: データベース名
+        ko: 데이터베이스 이름
+        ms: Nama pangkalan data
+        pt-br: Nome do banco de dados
+        ru: Имя базы данных
+        tr: Veritabanı Adı
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: brushllm
+      edit: true
+      envKey: PANEL_DB_USER
+      labelEn: Database User
+      labelZh: 数据库用户
+      label:
+        en: Database User
+        es-es: Usuario de base de datos
+        zh: 数据库用户
+        zh-Hant: 資料庫使用者
+        ja: データベースユーザー
+        ko: 데이터베이스 사용자
+        ms: Nama pengguna pangkalan data
+        pt-br: Usuário do banco de dados
+        ru: Пользователь базы данных
+        tr: Veritabanı Kullanıcısı
+      random: true
+      required: true
+      rule: paramCommon
+      type: text
+    - default: brushllm
+      edit: true
+      envKey: PANEL_DB_USER_PASSWORD
+      labelEn: Database Password
+      labelZh: 数据库用户密码
+      label:
+        en: Database Password
+        es-es: Contraseña de base de datos
+        zh: 数据库用户密码
+        zh-Hant: 資料庫使用者密碼
+        ja: データベースパスワード
+        ko: 데이터베이스 비밀번호
+        ms: Kata laluan pangkalan data
+        pt-br: Senha do banco de dados
+        ru: Пароль базы данных
+        tr: Veritabanı Parolası
+      random: true
+      required: true
+      rule: paramComplexity
+      type: password
+    - default: ""
+      edit: true
+      envKey: PANEL_REDIS_HOST
+      key: redis
+      labelEn: Redis Service
+      labelZh: Redis 服务
+      label:
+        en: Redis Service
+        es-es: Servicio de Redis
+        zh: Redis 服务
+        zh-Hant: Redis 服務
+        ja: Redis サービス
+        ko: Redis 서비스
+        ms: Perkhidmatan Redis
+        pt-br: Serviço Redis
+        ru: Сервис Redis
+        tr: Redis Hizmeti
+      required: true
+      type: service
+    - default: ""
+      edit: true
+      envKey: PANEL_REDIS_ROOT_PASSWORD
+      labelEn: Redis service password
+      labelZh: Redis 服务密码
+      label:
+        en: Redis service password
+        es-es: Contraseña del servicio Redis
+        zh: Redis 服务密码
+        zh-Hant: Redis 服務密碼
+        ja: Redis サービスのパスワード
+        ko: Redis 서비스 비밀번호
+        ms: Kata laluan perkhidmatan Redis
+        pt-br: Senha do serviço Redis
+        ru: Пароль службы Redis
+        tr: Redis Hizmet Parolası
+      required: true
+      type: password
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelEn: Web Port
+      labelZh: Web 访问端口
+      label:
+        en: Web Port
+        es-es: Puerto web
+        zh: Web 访问端口
+        zh-Hant: Web 訪問埠
+        ja: Webポート
+        ko: 웹 포트
+        ms: Port Web
+        pt-br: Porta Web
+        ru: Веб-порт
+        tr: Web Bağlantı Noktası
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelEn: Timezone
+      labelZh: 时区
+      label:
+        en: Timezone
+        es-es: Zona horaria
+        zh: 时区
+        zh-Hant: 時區
+        ja: タイムゾーン
+        ko: 시간대
+        ms: Zon masa
+        pt-br: Fuso horário
+        ru: Часовой пояс
+        tr: Saat Dilimi
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: SESSION_SECRET
+      labelEn: Session Secret (auto-generated if empty; must match across nodes)
+      labelZh: 会话密钥（留空自动生成，多节点部署须各节点一致）
+      label:
+        en: Session Secret (auto-generated if empty; must match across nodes)
+        es-es: Secreto de sesión (vacío para generar automáticamente; debe coincidir entre nodos)
+        zh: 会话密钥（留空自动生成，多节点部署须各节点一致）
+        zh-Hant: 會話金鑰（留空自動產生，多節點部署須各節點一致）
+        ja: セッションシークレット（空欄で自動生成。マルチノードでは全ノードで統一）
+        ko: 세션 시크릿(비워 두면 자동 생성, 다중 노드에서는 모든 노드가 동일해야 함)
+        ms: Rahsia sesi (kosong untuk jana automatik; mesti sama pada semua nod)
+        pt-br: Segredo de sessão (vazio para gerar automaticamente; deve coincidir entre nós)
+        ru: Секрет сессии (пусто = создать автоматически; одинаков на всех узлах)
+        tr: Oturum sırrı (otomatik oluşturmak için boş bırakın; tüm düğümlerde aynı olmalı)
+      required: false
+      type: password
+      random: true

@@ -14,8 +14,6 @@ services:
     environment:
       - TZ=${TZ}
       - SESSION_SECRET=${SESSION_SECRET}
-      - SQL_DSN=${SQL_DSN}
-      - REDIS_CONN_STRING=${REDIS_CONN_STRING}
     labels:
       createdBy: "Apps"
     healthcheck:

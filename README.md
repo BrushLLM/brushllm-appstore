@@ -20,16 +20,31 @@ bash <(curl -sL https://github.com/BrushLLM/brushllm-appstore/raw/main/install.s
 
 **3. Find BrushLLM (Local tag) in the list → Install**
 
-Defaults work out of the box (built-in SQLite, single container). Optional
-external database / Redis:
+Three variants are published per release — pick one in the version dropdown:
+
+| Variant | Database | Redis | For |
+|---|---|---|---|
+| `1.0.0-rc.47` (default) | built-in SQLite | none | Single node, zero extra services |
+| `1.0.0-rc.47-postgres` | PostgreSQL (1Panel app) | 1Panel Redis app | Production / multi-node |
+| `1.0.0-rc.47-mysql` | MySQL (1Panel app) | 1Panel Redis app | Production / multi-node |
+| `latest` | built-in SQLite | none | Tracks the newest image |
+
+The default variant asks only for web port, timezone, and session secret.
+The database variants follow the 1Panel dependency pattern: select the
+PostgreSQL/MySQL and Redis apps already installed in your panel from
+dropdowns — host, port, and credentials are wired automatically and the
+database/user are provisioned for you.
+
+Common parameters:
 
 | Parameter | Default | Notes |
 |---|---|---|
 | Web port | 3000 | Port conflicts auto-detected |
 | Timezone | Asia/Shanghai | |
 | Session secret | auto-generated | Must match across nodes |
-| External DB DSN | empty | Empty = built-in SQLite; MySQL / PostgreSQL DSN supported |
-| Redis connection | empty | Recommended for multi-node |
+
+> Switching between variants (e.g. SQLite -> PostgreSQL) does not migrate
+> data; pick the right variant for a fresh install or migrate manually.
 
 ## Upgrade
 
@@ -50,12 +65,14 @@ apps/brushllm/
 ├── data.yml              # app metadata
 ├── logo.png
 ├── README.md / README_en.md
-├── 1.0.0-rc.47/          # pinned version (image tag v1.0.0-rc.47)
+├── 1.0.0-rc.47/          # SQLite variant (image tag v1.0.0-rc.47)
 │   ├── data.yml          # install form
 │   ├── docker-compose.yml
 │   ├── data/             # SQLite persistence
 │   └── logs/
-└── latest/               # floating tag
+├── 1.0.0-rc.47-postgres/ # PostgreSQL + Redis variant (1Panel app dependency)
+├── 1.0.0-rc.47-mysql/    # MySQL + Redis variant (1Panel app dependency)
+└── latest/               # SQLite variant, floating tag
 ```
 
 ## Versioning
