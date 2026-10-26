@@ -64,8 +64,8 @@ BrushLLM is a customized fork of
 [QuantumNous/new-api](https://github.com/QuantumNous/new-api) (AGPLv3).
 Version numbers track upstream releases (currently `v1.0.0-rc.47`) to ease
 future upgrades. Images are published at
-`ghcr.io/brushllm/brushllm-console`; corresponding source lives in the
-[brushllm-console repository](https://github.com/BrushLLM/brushllm-console).
+`ghcr.io/brushllm/brushllm-newapi`; corresponding source lives in the
+[brushllm-newapi repository](https://github.com/BrushLLM/brushllm-newapi).
 
 ## License & attribution
 
