@@ -1,0 +1,31 @@
+services:
+  brushllm:
+    image: ghcr.io/<owner>/brushllm:latest
+    container_name: ${CONTAINER_NAME}
+    restart: always
+    command: --log-dir /app/logs
+    ports:
+      - ${PANEL_APP_PORT_HTTP}:3000
+    networks:
+      - 1panel-network
+    volumes:
+      - ./data:/data
+      - ./logs:/app/logs
+    environment:
+      - TZ=${TZ}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - SQL_DSN=${SQL_DSN}
+      - REDIS_CONN_STRING=${REDIS_CONN_STRING}
+    labels:
+      createdBy: "Apps"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - wget -q -O - http://localhost:3000/api/status | grep -q '"success":\s*true' || exit 1
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+networks:
+  1panel-network:
+    external: true

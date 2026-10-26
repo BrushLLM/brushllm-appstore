@@ -1,0 +1,39 @@
+additionalProperties:
+  formFields:
+    - default: 3000
+      edit: true
+      envKey: PANEL_APP_PORT_HTTP
+      labelZh: Web 端口
+      labelEn: Port
+      required: true
+      rule: paramPort
+      type: number
+    - default: Asia/Shanghai
+      edit: true
+      envKey: TZ
+      labelZh: 时区
+      labelEn: Time Zone
+      required: true
+      type: text
+    - default: ''
+      edit: true
+      envKey: SESSION_SECRET
+      labelZh: 会话密钥（留空自动生成，多节点部署须各节点一致）
+      labelEn: Session Secret (auto-generated if empty; must match across nodes)
+      required: false
+      type: password
+      random: true
+    - default: ''
+      edit: true
+      envKey: SQL_DSN
+      labelZh: 外部数据库连接串（可选，留空使用内置 SQLite）
+      labelEn: External database DSN (optional, empty = built-in SQLite)
+      required: false
+      type: text
+    - default: ''
+      edit: true
+      envKey: REDIS_CONN_STRING
+      labelZh: Redis 连接串（可选，多节点部署建议启用）
+      labelEn: Redis connection string (optional, recommended for multi-node)
+      required: false
+      type: text

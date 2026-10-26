@@ -1,0 +1,34 @@
+name: BrushLLM AppStore
+title: BrushLLM 应用商店
+description: BrushLLM 官方 1Panel 应用源
+additionalProperties:
+  tags:
+    - key: AI
+      name: AI
+      sort: 5
+      locales:
+        en: AI
+        es-es: AI
+        ja: AI
+        ms: AI
+        pt-br: AI
+        ru: AI
+        ko: AI
+        zh-Hant: AI
+        zh: AI
+        tr: AI
+    - key: Local
+      name: 本地应用
+      sort: 9999
+      locales:
+        en: Local
+        es-es: Local
+        ja: ローカル
+        ms: Setempatan
+        pt-br: Local
+        ru: Локальные
+        ko: 로컬
+        zh-Hant: 本地應用
+        zh: 本地应用
+        tr: Yerel
+  version: v1.0.0

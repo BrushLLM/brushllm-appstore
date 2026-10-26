@@ -1,0 +1,34 @@
+name: BrushLLM
+tags:
+  - AI
+title: BrushLLM 企业级 AI 网关
+description: 一个密钥调用所有模型 —— OpenAI、Anthropic、Gemini、DeepSeek、通义千问统一接口、统一计费、统一审计
+additionalProperties:
+  key: brushllm
+  name: BrushLLM
+  tags:
+    - AI
+  shortDescZh: 企业级 AI 网关，一个密钥调用所有模型
+  shortDescEn: Enterprise AI gateway — one key for every model
+  description:
+    en: 'BrushLLM is an enterprise AI gateway: one API key for OpenAI, Anthropic, Gemini, DeepSeek, Qwen and more — unified API, unified billing, unified audit. Based on the open-source New API project (AGPLv3).'
+    es-es: 'BrushLLM es una puerta de enlace de IA empresarial: una clave de API para OpenAI, Anthropic, Gemini, DeepSeek, Qwen y más — API unificada, facturación unificada, auditoría unificada. Basado en el proyecto de código abierto New API (AGPLv3).'
+    ja: 'BrushLLM はエンタープライズ AI ゲートウェイです。OpenAI、Anthropic、Gemini、DeepSeek、Qwen などを 1 つの API キーで — 統一された API、統一された課金、統一された監査。オープンソースの New API プロジェクト（AGPLv3）をベースにしています。'
+    ms: 'BrushLLM ialah gateway AI korporat: satu kunci API untuk OpenAI, Anthropic, Gemini, DeepSeek, Qwen dan banyak lagi — API bersatu, pengebilan bersatu, audit bersatu. Berdasarkan projek sumber terbuka New API (AGPLv3).'
+    pt-br: 'BrushLLM é um gateway de IA corporativo: uma chave de API para OpenAI, Anthropic, Gemini, DeepSeek, Qwen e mais — API unificada, cobrança unificada, auditoria unificada. Baseado no projeto de código aberto New API (AGPLv3).'
+    ru: 'BrushLLM — корпоративный AI-шлюз: один API-ключ для OpenAI, Anthropic, Gemini, DeepSeek, Qwen и других — единый API, единый биллинг, единый аудит. Основан на открытом проекте New API (AGPLv3).'
+    ko: 'BrushLLM은 엔터프라이즈 AI 게이트웨이입니다: OpenAI, Anthropic, Gemini, DeepSeek, Qwen 등을 위한 하나의 API 키 — 통합 API, 통합 빌링, 통합 감사. 오픈소스 New API 프로젝트(AGPLv3) 기반.'
+    zh-Hant: 'BrushLLM 企業級 AI 閘道：一個金鑰呼叫所有模型 —— OpenAI、Anthropic、Gemini、DeepSeek、通義千問統一介面、統一計費、統一稽核。基於開源專案 New API（AGPLv3）。'
+    zh: 'BrushLLM 企业级 AI 网关：一个密钥调用所有模型 —— OpenAI、Anthropic、Gemini、DeepSeek、通义千问统一接口、统一计费、统一审计。基于开源项目 New API（AGPLv3）。'
+    tr: 'BrushLLM bir kurumsal AI ağ geçididir: OpenAI, Anthropic, Gemini, DeepSeek, Qwen ve daha fazlası için tek bir API anahtarı — birleşik API, birleşik faturalandırma, birleşik denetim. Açık kaynak New API projesini (AGPLv3) temel alır.'
+  type: website
+  crossVersionUpdate: true
+  limit: 0
+  recommend: 9999
+  website: https://brushllm.com
+  github: https://github.com/<owner>/brushllm
+  document: https://brushllm.com/docs
+  memoryRequired: 512
+  architectures:
+    - amd64
+    - arm64
