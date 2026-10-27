@@ -16,9 +16,9 @@ unified API, unified billing, and unified auditing.
   two-factor authentication
 - **Console**: 11 languages, light/dark themes, built-in playground
 
-Runs out of the box with built-in SQLite in a single container; the install
-form can switch to external MySQL / PostgreSQL and Redis for multi-node
-deployments.
+Requires the PostgreSQL and Redis apps from the 1Panel app store — the
+install form wires them automatically (host, port, credentials, database
+provisioning).
 
 ## Installation
 
